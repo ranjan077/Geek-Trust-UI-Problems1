@@ -1,0 +1,5 @@
+@mixin clearFix() {
+	clear: both;
+	content: "";
+	display: block;
+}

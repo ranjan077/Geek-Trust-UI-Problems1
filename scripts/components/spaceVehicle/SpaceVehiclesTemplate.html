@@ -1,0 +1,9 @@
+<% _.each(vehicles, function(vehicle) { %>
+	<li data-value='<%= vehicle.name %>' class="<%= (distance > vehicle.max_distance || vehicle.total_no === 0) || selectedOption ? '' : 'enable' %>">
+		<input type="radio"  id="<%= cid + '-' + vehicle.name %>" name="<%= cid + '-' %>spaceveh" <%= vehicle.name == selectedOption ? 'checked' : '' %> <%= (distance > vehicle.max_distance || vehicle.total_no === 0 || selectedOption) ? 'disabled' : '' %>>
+		<label for="<%= cid + '-' + vehicle.name %>">
+			<%= vehicle.name %><%= vehicle.max_distance %>
+			<span>(<%= vehicle.total_no %>)</span>
+		</label>
+	</li>
+<% }) %>

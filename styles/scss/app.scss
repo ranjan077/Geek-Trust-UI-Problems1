@@ -1,0 +1,160 @@
+@import 'var';
+@import 'fonts';
+@import 'mixins';
+
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+h2,h3 {
+	margin: 0;
+}
+
+body {
+	background-image: url('/images/background.jpg');
+}
+
+header {
+	&:after {
+		@include clearFix;
+	}
+	.nav {
+		display: inline-block;
+		float: right;
+		ul {
+			display: inline-block;
+			li {
+				display: inline-block;
+				cursor: pointer;
+				&:first-child {
+					padding-right: 10px;
+    				border-right: 1px solid black;
+				}
+			}
+		}
+	}
+}
+
+#app {
+	width: 960px;
+	margin: 0 auto;
+	h1 {
+		font-family: 'space';
+		color: $primary-color;
+    	font-size: 65px;
+    	text-align: center;
+    	margin-top: 0;
+	}
+
+	h2 {
+		text-align: center;
+		color: $secondary-color;
+		font-family: 'space';
+	}
+
+	.destinations {
+		margin-top: 100px;
+		margin-left: 40px;
+		&:after {
+			@include clearFix;
+		}
+		
+		.select-palnet {
+			display: inline-block;
+			float: left;
+			border: 2px solid $white-color;
+			border-radius: 15px;
+			box-sizing: border-box;
+   			padding: 10px;
+   			background-color: $primary-color;
+			&:not(:first-child) {
+				margin-left: 40px;
+			}
+
+			/*label.find {
+				position: relative;
+				&:after {
+					content: "";
+					background: url("../images/icons/expand-button.png") no-repeat;
+					background-color: grey;
+					width: 20px;
+	    			height: 21px;
+	    			display: inline-block;
+	    			float: right;
+	    		}
+	    		&.expand:after {
+	    			background: url("../images/icons/up-arrow.png") no-repeat;
+	    			background-color: grey;
+				    width: 20px;
+				    height: 21px;
+				    display: inline-block;
+				    float: right;
+	    		}
+			}*/
+
+			.planet-img {
+				width: 70px;
+			    height: 70px;
+			    display: block;
+			    margin: 10px auto;
+			    border-radius: 40px;
+			    border: 4px solid $white-color;
+				background: url(../images/planets.jpg) -350px -35px;
+			}
+
+			.find {
+				display: block;
+				width: 100%;
+				position: relative;
+				background-color: $white-color;
+				box-sizing: border-box;
+				padding: 5px;
+				border-radius: 5px;
+				.planet-search {
+					width: 90%;
+					background: none transparent!important;
+					border: none!important;
+					box-shadow: none!important;
+					outline: 0;
+				}
+				.dropdown.icon {
+					cursor: pointer;
+				    position: absolute;
+				    width: auto;
+				    height: auto;
+				    right: 5px;
+				    font-family: icon;
+					&:after {
+						content: '\f0d7';
+					}
+				}
+			}
+			
+
+			.planet-list {
+				display: none;
+				margin-top: 5px;
+				background-color: $white-color;
+				li {
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.05);
+					}
+				}
+			}
+
+			.space-vehicles-list {
+				li {
+					color: aquamarine;
+					&.enable {
+						color: black;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
+
