@@ -1,5 +1,5 @@
 require.config({
-	base: '.',
+	base: '/Scripts',
 	paths: {
 		/* ROUTER */
 		'Router': 'router/spaceRouter',
