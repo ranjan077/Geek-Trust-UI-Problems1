@@ -48,6 +48,11 @@ header .nav {
     text-align: center;
     color: #ecede8;
     font-family: 'space'; }
+  #app .launch {
+    width: 100px;
+    margin: 27px;
+    border: 2px solid #ffffff;
+    border-radius: 53px; }
   #app .destinations {
     margin-top: 100px;
     margin-left: 40px; }

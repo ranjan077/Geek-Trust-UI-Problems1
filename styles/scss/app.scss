@@ -55,6 +55,13 @@ header {
 		font-family: 'space';
 	}
 
+	.launch {
+		width: 100px;
+   		margin: 27px;
+    	border: 2px solid $white-color;
+    	border-radius: 53px;
+	}
+
 	.destinations {
 		margin-top: 100px;
 		margin-left: 40px;
