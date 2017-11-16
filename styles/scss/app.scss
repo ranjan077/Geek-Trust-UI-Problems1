@@ -39,7 +39,7 @@ header {
 }
 
 #app {
-	width: 960px;
+	width: 1000px;
 	margin: 0 auto;
 	h1 {
 		font-family: 'space';
@@ -61,10 +61,13 @@ header {
     	border: 2px solid $white-color;
     	border-radius: 53px;
 	}
+	
+	.space-play {
+		margin-left: 60px;
+	}
 
 	.destinations {
 		margin-top: 100px;
-		margin-left: 40px;
 		&:after {
 			@include clearFix;
 		}
