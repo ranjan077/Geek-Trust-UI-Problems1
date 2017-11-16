@@ -14,7 +14,7 @@ h2,h3 {
 }
 
 body {
-	background-image: url('/images/background.jpg');
+	background-image: url('../images/background.jpg');
 }
 
 header {
@@ -73,28 +73,7 @@ header {
 			&:not(:first-child) {
 				margin-left: 40px;
 			}
-
-			/*label.find {
-				position: relative;
-				&:after {
-					content: "";
-					background: url("../images/icons/expand-button.png") no-repeat;
-					background-color: grey;
-					width: 20px;
-	    			height: 21px;
-	    			display: inline-block;
-	    			float: right;
-	    		}
-	    		&.expand:after {
-	    			background: url("../images/icons/up-arrow.png") no-repeat;
-	    			background-color: grey;
-				    width: 20px;
-				    height: 21px;
-				    display: inline-block;
-				    float: right;
-	    		}
-			}*/
-
+			
 			.planet-img {
 				width: 70px;
 			    height: 70px;

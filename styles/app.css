@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'space';
-  src: url("/fonts/space2-webfont.woff2") format("woff2"), url("/fonts/space2-webfont.woff") format("woff");
+  src: url("../fonts/space2-webfont.woff2") format("woff2"), url("/fonts/space2-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'icon';
-  src: url("/fonts/icons.woff2") format("woff2");
+  src: url("../fonts/icons.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
 ul {
@@ -17,7 +17,7 @@ h2, h3 {
   margin: 0; }
 
 body {
-  background-image: url("/images/background.jpg"); }
+  background-image: url("../images/background.jpg"); }
 
 header:after {
   clear: both;
@@ -62,27 +62,7 @@ header .nav {
       border-radius: 15px;
       box-sizing: border-box;
       padding: 10px;
-      background-color: #e17f34;
-      		/*label.find {
-      			position: relative;
-      			&:after {
-      				content: "";
-      				background: url("../images/icons/expand-button.png") no-repeat;
-      				background-color: grey;
-      				width: 20px;
-          			height: 21px;
-          			display: inline-block;
-          			float: right;
-          		}
-          		&.expand:after {
-          			background: url("../images/icons/up-arrow.png") no-repeat;
-          			background-color: grey;
-      			    width: 20px;
-      			    height: 21px;
-      			    display: inline-block;
-      			    float: right;
-          		}
-      		}*/ }
+      background-color: #e17f34; }
       #app .destinations .select-palnet:not(:first-child) {
         margin-left: 40px; }
       #app .destinations .select-palnet .planet-img {
