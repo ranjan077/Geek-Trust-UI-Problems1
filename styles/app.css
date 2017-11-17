@@ -19,6 +19,9 @@ h2, h3 {
 body {
   background-image: url("../images/background.jpg"); }
 
+.hide {
+  display: none; }
+
 header:after {
   clear: both;
   content: "";
@@ -33,7 +36,16 @@ header .nav {
       cursor: pointer; }
       header .nav ul li:first-child {
         padding-right: 10px;
-        border-right: 1px solid black; }
+        border-right: 1px solid #ffffff; }
+      header .nav ul li a {
+        font-family: space;
+        font-size: 20px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff; }
+        header .nav ul li a:hover {
+          text-decoration: underline; }
 
 #app {
   width: 1000px;
@@ -54,13 +66,34 @@ header .nav {
     border: 2px solid #ffffff;
     border-radius: 53px; }
   #app .space-play {
-    margin-left: 60px; }
+    margin-left: 50px; }
   #app .destinations {
-    margin-top: 100px; }
+    margin-top: 65px; }
     #app .destinations:after {
       clear: both;
       content: "";
       display: block; }
+    #app .destinations .overlay {
+      position: relative;
+      float: left;
+      display: inline-block; }
+      #app .destinations .overlay:after {
+        clear: both;
+        content: "";
+        display: block; }
+      #app .destinations .overlay:not(:first-child) {
+        margin-left: 40px; }
+      #app .destinations .overlay.disabled:before {
+        content: " ";
+        z-index: 10;
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 15px; }
     #app .destinations .select-palnet {
       display: inline-block;
       float: left;
@@ -69,16 +102,28 @@ header .nav {
       box-sizing: border-box;
       padding: 10px;
       background-color: #e17f34; }
-      #app .destinations .select-palnet:not(:first-child) {
-        margin-left: 40px; }
       #app .destinations .select-palnet .planet-img {
         width: 70px;
         height: 70px;
         display: block;
         margin: 10px auto;
         border-radius: 40px;
-        border: 4px solid #ffffff;
-        background: url(../images/planets.jpg) -350px -35px; }
+        border: 4px solid #ffffff; }
+        #app .destinations .select-palnet .planet-img.question {
+          background: url(../images/question.jpg);
+          background-size: contain; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Donlon {
+          background: url(../images/planets.jpg) -350px -35px; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Enchai {
+          background: url(../images/planets.jpg) -510px -35px; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Jebing {
+          background: url(../images/planets.jpg) -670px -35px; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Sapir {
+          background: url(../images/planets.jpg) -820px -35px; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Lerbin {
+          background: url(../images/planets.jpg) -1140px -190px; }
+        #app .destinations .select-palnet .planet-img:not(.question).planet-Pingasor {
+          background: url(../images/planets.jpg) -820px -190px; }
       #app .destinations .select-palnet .find {
         display: block;
         width: 100%;
@@ -105,7 +150,10 @@ header .nav {
       #app .destinations .select-palnet .planet-list {
         display: none;
         margin-top: 5px;
-        background-color: #ffffff; }
+        background-color: #ffffff;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center; }
         #app .destinations .select-palnet .planet-list li:hover {
           background-color: rgba(0, 0, 0, 0.05); }
       #app .destinations .select-palnet .space-vehicles-list li {

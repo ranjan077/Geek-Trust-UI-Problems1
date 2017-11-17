@@ -28,6 +28,18 @@ define(['httpHelper',
 			this.selectedPlanet = null;
 			this.vehicles = this.cloneCollection(this.options.vehicles);
 			this.render(this.options.planets.toJSON());
+			this.attachEvents();
+		},
+
+		attachEvents: function() {
+			this.listenTo(this.vehicles, 'change', function(changed) {
+				var model;
+				model = this.options.vehicles.get(changed.toJSON().name);
+				model.set({total_no: changed.toJSON().total_no});
+				this.disableSelection();
+				this.setTimeTaken(changed);
+				this.setSelectedDetails(this.selectedPlanet, changed.get('name'));
+			}.bind(this));
 		},
 
 		unAttachEvents: function() {
@@ -67,23 +79,25 @@ define(['httpHelper',
 			this.selectedPlanet = $(e.target).data('value')
 			this.$el.find('input').val(this.selectedPlanet);
 			this.toggleList(e);
-
+			this.destroyViews();
 			view= new SpaceVehiclesView({
 				vehicles: this.vehicles,
 				distance: this.distanceToPlanet
 			});
-
-			this.listenTo(this.vehicles, 'change', function(changed) {
-				var model;
-				model = this.options.vehicles.get(changed.toJSON().name);
-				model.set({total_no: changed.toJSON().total_no});
-				this.disableSelection();
-				this.setTimeTaken(changed);
-				this.setSelectedDetails(this.selectedPlanet, changed.get('name'));
-			}.bind(this));
-
+			this.removeClasses();
+			this.$el.find('.planet-img').removeClass('question').addClass('planet-' + this.selectedPlanet);
 			this.$el.find('.vehicle-section').html(view.el);
 			this.views.push(view);
+		},
+
+		removeClasses: function() {
+			var $selector = this.$el.find('.planet-img');
+			$selector.removeClass('planet-Donlon');
+			$selector.removeClass('planet-Enchai');
+			$selector.removeClass('planet-Jebing');
+			$selector.removeClass('planet-Sapir');
+			$selector.removeClass('planet-Lerbin');
+			$selector.removeClass('planet-Pingasor');
 		},
 
 		disableSelection: function() {
@@ -122,6 +136,7 @@ define(['httpHelper',
 				this.toggleList(e, 'expand');
 			} else {
 				this.render();
+				this.views[0].$el.addClass('hide');
 			}
 		},
 
@@ -129,6 +144,7 @@ define(['httpHelper',
 			var data = {};
 			data.planets = planets || this.options.planets.toJSON();
 			var template = _.template(selectPlanetTemplate);
+			this.$el.removeClass('disabled');
 			this.$el.find('.planet-search').removeAttr('disabled');
 			this.$el.find('.planet-list').html(template(data));
 		},
@@ -139,13 +155,17 @@ define(['httpHelper',
 			});
 		},
 
-		destroy: function() {
+		destroyViews: function() {
 			_.each(this.views, function(view) {
 				view.destroy();
 			});
+			this.views = [];
+		},
+
+		destroy: function() {
+			this.destroyViews();
 			this.selectedPlanet = null;
 			this.clearCollection(this.vehicles);
-			this.views = [];
 			this.unAttachEvents();
 			this.remove();
 		}

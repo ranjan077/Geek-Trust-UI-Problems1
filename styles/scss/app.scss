@@ -17,6 +17,10 @@ body {
 	background-image: url('../images/background.jpg');
 }
 
+.hide {
+	display: none;
+}
+
 header {
 	&:after {
 		@include clearFix;
@@ -31,7 +35,18 @@ header {
 				cursor: pointer;
 				&:first-child {
 					padding-right: 10px;
-    				border-right: 1px solid black;
+    				border-right: 1px solid $white-color;
+				}
+				a {
+					font-family: space;
+					font-size: 20px;
+					display: inline-block;
+				    text-align: center;
+				    text-decoration: none;
+				    color: $white-color;
+				    &:hover {
+				    	text-decoration: underline;
+				    }
 				}
 			}
 		}
@@ -61,17 +76,40 @@ header {
     	border: 2px solid $white-color;
     	border-radius: 53px;
 	}
-	
+
 	.space-play {
-		margin-left: 60px;
+		margin-left: 50px;
 	}
 
 	.destinations {
-		margin-top: 100px;
+		margin-top: 65px;
 		&:after {
 			@include clearFix;
 		}
-		
+		.overlay {
+			position: relative;
+			float: left;
+			display: inline-block;
+			&:after {
+				@include clearFix;
+			}
+			&:not(:first-child) {
+				margin-left: 40px;
+			}
+			&.disabled:before {
+				content: " ";
+				  z-index: 10;
+				  display: block;
+				  position: absolute;
+				  height: 100%;
+				  top: 0;
+				  left: 0;
+				  right: 0;
+				  background: rgba(0, 0, 0, 0.5);
+				  border-radius: 15px;
+			}
+		}
+
 		.select-palnet {
 			display: inline-block;
 			float: left;
@@ -80,9 +118,7 @@ header {
 			box-sizing: border-box;
    			padding: 10px;
    			background-color: $primary-color;
-			&:not(:first-child) {
-				margin-left: 40px;
-			}
+			
 			
 			.planet-img {
 				width: 70px;
@@ -91,7 +127,32 @@ header {
 			    margin: 10px auto;
 			    border-radius: 40px;
 			    border: 4px solid $white-color;
-				background: url(../images/planets.jpg) -350px -35px;
+			    
+			    &.question {
+			    	background: url(../images/question.jpg);
+			    	background-size: contain;
+			    }
+
+				&:not(.question) {
+					&.planet-Donlon {
+						background: url(../images/planets.jpg) -350px -35px;
+					}
+					&.planet-Enchai {
+						background: url(../images/planets.jpg) -510px -35px;
+					}
+					&.planet-Jebing {
+						background: url(../images/planets.jpg) -670px -35px;
+					}
+					&.planet-Sapir {
+						background: url(../images/planets.jpg) -820px -35px;
+					}
+					&.planet-Lerbin {
+						background: url(../images/planets.jpg) -1140px -190px;
+					}
+					&.planet-Pingasor {
+						background: url(../images/planets.jpg) -820px -190px;
+					}
+				}
 			}
 
 			.find {
@@ -127,6 +188,9 @@ header {
 				display: none;
 				margin-top: 5px;
 				background-color: $white-color;
+				box-sizing: border-box;
+    			padding: 10px;
+    			text-align: center;
 				li {
 					&:hover {
 						background-color: rgba(0, 0, 0, 0.05);
