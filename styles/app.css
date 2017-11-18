@@ -211,13 +211,18 @@ header .nav {
       box-sizing: border-box;
       padding: 10px;
       text-align: center; }
-      #app .destinations .select-palnet .planet-list li:hover {
-        background-color: rgba(0, 0, 0, 0.05); }
+      #app .destinations .select-palnet .planet-list li {
+        cursor: pointer; }
+        #app .destinations .select-palnet .planet-list li:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
     #app .destinations .select-palnet .space-vehicles-list li {
+      cursor: pointer;
       color: aquamarine; }
       #app .destinations .select-palnet .space-vehicles-list li.enable {
         color: black;
         font-weight: bold; }
+      #app .destinations .select-palnet .space-vehicles-list li label, #app .destinations .select-palnet .space-vehicles-list li input {
+        cursor: pointer; }
   #app .space-result .result {
     text-align: center; }
     #app .space-result .result p {

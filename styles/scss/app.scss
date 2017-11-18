@@ -255,6 +255,7 @@ header {
     			padding: 10px;
     			text-align: center;
 				li {
+					cursor: pointer;
 					&:hover {
 						background-color: rgba(0, 0, 0, 0.05);
 					}
@@ -263,10 +264,14 @@ header {
 
 			.space-vehicles-list {
 				li {
+					cursor: pointer;
 					color: aquamarine;
 					&.enable {
 						color: black;
 						font-weight: bold;
+					}
+					label, input {
+						cursor: pointer;
 					}
 				}
 			}
