@@ -49,6 +49,9 @@ define(['SelectPlanetView',
 		attachEvents: function() {
 			this.selectedTravelData.on('change', function selectedTravelDataHandler(obj) {
 				this.planets.remove(obj.planet);
+				_.each(this.views, function(view) {
+					view.$el.addClass('disabled');
+				});
 				if(this.destinationID < 4) {
 					this.destinationID = this.destinationID + 1;
 					this.setUpPlanetsViews(this.planets);
