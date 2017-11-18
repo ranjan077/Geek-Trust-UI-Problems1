@@ -1,11 +1,13 @@
 <% if(status === 'success') { %>
 	<h2>Sucess! Congradulations on finding Falcone. King Shan is mighty pleased.</h2>
 	<div class="result">
-		<p>Time Taken: <%= timeTakenModel %></p>
-		<p>Planet Found: <%= planet_name %></p>
-		<a href="#play"><input type="button" name="" value="Start Again"></a>
+		<p>Time Taken: <span class="time"><%= timeTakenModel.get('time') %> hours</span></p>
+		<p>Planet Found: <span class="planet_name"><%= planet_name %></span></p>
+		<a href="#play" class="start-again">Start again</a>
 	</div>
 <% } else { %>
 	<h2>Failed!</h2>
-	<a href="#play"><input type="button" name="" value="Try Again"></a>
+	<div class="result">
+		<a href="#play" class="start-again">Try again</a>
+	</div>
 <%  } %>

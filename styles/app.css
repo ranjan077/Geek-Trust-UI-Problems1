@@ -190,5 +190,26 @@ header .nav {
       #app .destinations .select-palnet .space-vehicles-list li.enable {
         color: black;
         font-weight: bold; }
+  #app .space-result .result {
+    text-align: center; }
+    #app .space-result .result p {
+      font-family: 'space';
+      color: #ffffff;
+      font-size: 30px; }
+      #app .space-result .result p span.time, #app .space-result .result p span.planet_name {
+        font-family: 'numeric';
+        color: #e17f34; }
+    #app .space-result .result .start-again {
+      display: inline-block;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 20px;
+      padding: 20px;
+      background-color: #e17f34;
+      color: black;
+      text-decoration: none;
+      border: 2px solid #ffffff;
+      border-radius: 40px;
+      font-family: 'space'; }
 
 /*# sourceMappingURL=app.css.map */

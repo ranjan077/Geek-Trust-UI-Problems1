@@ -114,6 +114,7 @@ header {
 			}
 		}
 	}
+
 	.destinations {
 		&:after {
 			@include clearFix;
@@ -238,6 +239,36 @@ header {
 						font-weight: bold;
 					}
 				}
+			}
+		}
+	}
+
+	.space-result {
+		.result {
+			text-align: center;
+			p {
+				font-family: 'space';
+				color: $white-color;
+				font-size: 30px;
+				span{
+					&.time,&.planet_name {
+						font-family: 'numeric';
+						color: $primary-color;
+					}
+				}
+			}
+			.start-again {
+				display: inline-block;
+			    font-weight: bold;
+			    margin-top: 20px;
+			    font-size: 20px;
+			    padding: 20px;
+			    background-color: $primary-color;
+			    color: black;
+			    text-decoration: none;
+			    border: 2px solid $white-color;
+			    border-radius: 40px;
+			    font-family: 'space';
 			}
 		}
 	}
