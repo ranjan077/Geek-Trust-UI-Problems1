@@ -3,7 +3,7 @@
 define([], function() {
 	var SpaceTotalTimeView = Backbone.View.extend({
 
-		template: '<h3><%= value %></h3>',
+		template: '<span class="time-taken">Time taken:</span><h3><%= value %></h3>',
 
 		className: 'space-time',
 		

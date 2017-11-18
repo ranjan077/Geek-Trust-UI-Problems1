@@ -55,6 +55,9 @@ header {
 
 #app {
 	width: 1000px;
+	@include mobile {
+		width: auto;
+	}
 	margin: 0 auto;
 	h1 {
 		font-family: 'space';
@@ -62,6 +65,10 @@ header {
     	font-size: 65px;
     	text-align: center;
     	margin: 0;
+    	@include mobile {
+			font-size: 30px;
+			margin: 30px;
+		}
 	}
 
 	h2 {
@@ -90,28 +97,43 @@ header {
 
 	.space-play {
 		margin-left: 50px;
+		@include mobile {
+			margin-left: 0px;
+		}
 	}
 
 	.space-time {
+		width: 50%;
+    	margin: 0 auto;
+    	text-align: center;
 		h3 {
 			text-align: center;
 			font-size: 103px;
 			font-family: 'numeric';
 			color: $primary-color;
 			position: relative;
-			&:before {
-				content: "Time Taken:";
-			    font-family: 'space';
-			    color: $white-color;
-			    font-size: 30px;
-			    position: absolute;
-			    top: 46px;
-			    left: 200px;
-			}
+			display: inline-block;
 			&:after {
 				content: "hours";
     			font-size: 30px;
 			}
+			@include mobile {
+				font-size: 40px;
+				&:before {
+					font-size: 25px;
+					top: 10px;
+					left: -10%;
+				}
+				&:after {
+					font-size: 20px;
+				}
+			}
+		}
+		.time-taken {
+			font-family: 'space';
+		    color: $white-color;
+		    font-size: 30px;
+		    display: inline-block;
 		}
 	}
 
@@ -126,8 +148,16 @@ header {
 			&:after {
 				@include clearFix;
 			}
-			&:not(:first-child) {
-				margin-left: 40px;
+			@include desktop {
+				&:not(:first-child) {
+					margin-left: 40px;
+				}
+			}
+			@include mobile {
+				display: block;
+				float: none;
+				width: 200px;
+    			margin: 40px auto;
 			}
 			&.disabled:before {
 				content: " ";

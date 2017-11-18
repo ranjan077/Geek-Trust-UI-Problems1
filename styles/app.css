@@ -55,12 +55,19 @@ header .nav {
 #app {
   width: 1000px;
   margin: 0 auto; }
+  @media (max-width: 1023px) {
+    #app {
+      width: auto; } }
   #app h1 {
     font-family: 'space';
     color: #e17f34;
     font-size: 65px;
     text-align: center;
     margin: 0; }
+    @media (max-width: 1023px) {
+      #app h1 {
+        font-size: 30px;
+        margin: 30px; } }
   #app h2 {
     text-align: center;
     color: #ecede8;
@@ -81,23 +88,37 @@ header .nav {
     cursor: pointer; }
   #app .space-play {
     margin-left: 50px; }
-  #app .space-time h3 {
-    text-align: center;
-    font-size: 103px;
-    font-family: 'numeric';
-    color: #e17f34;
-    position: relative; }
-    #app .space-time h3:before {
-      content: "Time Taken:";
+    @media (max-width: 1023px) {
+      #app .space-play {
+        margin-left: 0px; } }
+  #app .space-time {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
+    #app .space-time h3 {
+      text-align: center;
+      font-size: 103px;
+      font-family: 'numeric';
+      color: #e17f34;
+      position: relative;
+      display: inline-block; }
+      #app .space-time h3:after {
+        content: "hours";
+        font-size: 30px; }
+      @media (max-width: 1023px) {
+        #app .space-time h3 {
+          font-size: 40px; }
+          #app .space-time h3:before {
+            font-size: 25px;
+            top: 10px;
+            left: -10%; }
+          #app .space-time h3:after {
+            font-size: 20px; } }
+    #app .space-time .time-taken {
       font-family: 'space';
       color: #ffffff;
       font-size: 30px;
-      position: absolute;
-      top: 46px;
-      left: 200px; }
-    #app .space-time h3:after {
-      content: "hours";
-      font-size: 30px; }
+      display: inline-block; }
   #app .destinations:after {
     clear: both;
     content: "";
@@ -110,8 +131,15 @@ header .nav {
       clear: both;
       content: "";
       display: block; }
-    #app .destinations .overlay:not(:first-child) {
-      margin-left: 40px; }
+    @media (min-width: 1024px) {
+      #app .destinations .overlay:not(:first-child) {
+        margin-left: 40px; } }
+    @media (max-width: 1023px) {
+      #app .destinations .overlay {
+        display: block;
+        float: none;
+        width: 200px;
+        margin: 40px auto; } }
     #app .destinations .overlay.disabled:before {
       content: " ";
       z-index: 10;
