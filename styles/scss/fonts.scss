@@ -4,7 +4,6 @@
          url('/fonts/space2-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -12,5 +11,12 @@
     src: url('../fonts/icons.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'numeric';
+    src: url('../fonts/numeric-webfont.woff2') format('woff2'),
+         url('/fonts/numeric-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

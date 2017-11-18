@@ -103,7 +103,7 @@ define([
 	App.prototype.attachEvents = function() {
 		this.selectedTravelData.on('change', function() {
 			if(this.selectedTravelData.length === 4) {
-				$('#findbtn').removeAttr('disabled');
+				$('#findbtn').removeClass('hide');
 			}
 		}.bind(this));
 		$('#main-view').off('click', '#findbtn').on('click','#findbtn', function(e) {

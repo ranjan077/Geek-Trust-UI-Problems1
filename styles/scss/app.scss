@@ -61,7 +61,7 @@ header {
 		color: $primary-color;
     	font-size: 65px;
     	text-align: center;
-    	margin-top: 0;
+    	margin: 0;
 	}
 
 	h2 {
@@ -77,12 +77,44 @@ header {
     	border-radius: 53px;
 	}
 
+	.launch-btn {
+		width: 100px;
+		height: 100px;
+		margin: 20px auto;
+		background: url(../images/launch.png);
+		background-size: contain;
+		border: 5px solid $white-color;
+    	border-radius: 55px;
+		cursor: pointer;
+	}
+
 	.space-play {
 		margin-left: 50px;
 	}
 
+	.space-time {
+		h3 {
+			text-align: center;
+			font-size: 103px;
+			font-family: 'numeric';
+			color: $primary-color;
+			position: relative;
+			&:before {
+				content: "Time Taken:";
+			    font-family: 'space';
+			    color: $white-color;
+			    font-size: 30px;
+			    position: absolute;
+			    top: 46px;
+			    left: 200px;
+			}
+			&:after {
+				content: "hours";
+    			font-size: 30px;
+			}
+		}
+	}
 	.destinations {
-		margin-top: 65px;
 		&:after {
 			@include clearFix;
 		}

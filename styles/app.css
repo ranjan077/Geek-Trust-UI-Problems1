@@ -8,6 +8,11 @@
   src: url("../fonts/icons.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'numeric';
+  src: url("../fonts/numeric-webfont.woff2") format("woff2"), url("/fonts/numeric-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 ul {
   list-style: none;
   padding: 0;
@@ -55,7 +60,7 @@ header .nav {
     color: #e17f34;
     font-size: 65px;
     text-align: center;
-    margin-top: 0; }
+    margin: 0; }
   #app h2 {
     text-align: center;
     color: #ecede8;
@@ -65,101 +70,125 @@ header .nav {
     margin: 27px;
     border: 2px solid #ffffff;
     border-radius: 53px; }
+  #app .launch-btn {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background: url(../images/launch.png);
+    background-size: contain;
+    border: 5px solid #ffffff;
+    border-radius: 55px;
+    cursor: pointer; }
   #app .space-play {
     margin-left: 50px; }
-  #app .destinations {
-    margin-top: 65px; }
-    #app .destinations:after {
+  #app .space-time h3 {
+    text-align: center;
+    font-size: 103px;
+    font-family: 'numeric';
+    color: #e17f34;
+    position: relative; }
+    #app .space-time h3:before {
+      content: "Time Taken:";
+      font-family: 'space';
+      color: #ffffff;
+      font-size: 30px;
+      position: absolute;
+      top: 46px;
+      left: 200px; }
+    #app .space-time h3:after {
+      content: "hours";
+      font-size: 30px; }
+  #app .destinations:after {
+    clear: both;
+    content: "";
+    display: block; }
+  #app .destinations .overlay {
+    position: relative;
+    float: left;
+    display: inline-block; }
+    #app .destinations .overlay:after {
       clear: both;
       content: "";
       display: block; }
-    #app .destinations .overlay {
+    #app .destinations .overlay:not(:first-child) {
+      margin-left: 40px; }
+    #app .destinations .overlay.disabled:before {
+      content: " ";
+      z-index: 10;
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px; }
+  #app .destinations .select-palnet {
+    display: inline-block;
+    float: left;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #e17f34; }
+    #app .destinations .select-palnet .planet-img {
+      width: 70px;
+      height: 70px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 40px;
+      border: 4px solid #ffffff; }
+      #app .destinations .select-palnet .planet-img.question {
+        background: url(../images/question.jpg);
+        background-size: contain; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Donlon {
+        background: url(../images/planets.jpg) -350px -35px; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Enchai {
+        background: url(../images/planets.jpg) -510px -35px; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Jebing {
+        background: url(../images/planets.jpg) -670px -35px; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Sapir {
+        background: url(../images/planets.jpg) -820px -35px; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Lerbin {
+        background: url(../images/planets.jpg) -1140px -190px; }
+      #app .destinations .select-palnet .planet-img:not(.question).planet-Pingasor {
+        background: url(../images/planets.jpg) -820px -190px; }
+    #app .destinations .select-palnet .find {
+      display: block;
+      width: 100%;
       position: relative;
-      float: left;
-      display: inline-block; }
-      #app .destinations .overlay:after {
-        clear: both;
-        content: "";
-        display: block; }
-      #app .destinations .overlay:not(:first-child) {
-        margin-left: 40px; }
-      #app .destinations .overlay.disabled:before {
-        content: " ";
-        z-index: 10;
-        display: block;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 5px;
+      border-radius: 5px; }
+      #app .destinations .select-palnet .find .planet-search {
+        width: 90%;
+        background: none transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: 0; }
+      #app .destinations .select-palnet .find .dropdown.icon {
+        cursor: pointer;
         position: absolute;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 15px; }
-    #app .destinations .select-palnet {
-      display: inline-block;
-      float: left;
-      border: 2px solid #ffffff;
-      border-radius: 15px;
+        width: auto;
+        height: auto;
+        right: 5px;
+        font-family: icon; }
+        #app .destinations .select-palnet .find .dropdown.icon:after {
+          content: '\f0d7'; }
+    #app .destinations .select-palnet .planet-list {
+      display: none;
+      margin-top: 5px;
+      background-color: #ffffff;
       box-sizing: border-box;
       padding: 10px;
-      background-color: #e17f34; }
-      #app .destinations .select-palnet .planet-img {
-        width: 70px;
-        height: 70px;
-        display: block;
-        margin: 10px auto;
-        border-radius: 40px;
-        border: 4px solid #ffffff; }
-        #app .destinations .select-palnet .planet-img.question {
-          background: url(../images/question.jpg);
-          background-size: contain; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Donlon {
-          background: url(../images/planets.jpg) -350px -35px; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Enchai {
-          background: url(../images/planets.jpg) -510px -35px; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Jebing {
-          background: url(../images/planets.jpg) -670px -35px; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Sapir {
-          background: url(../images/planets.jpg) -820px -35px; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Lerbin {
-          background: url(../images/planets.jpg) -1140px -190px; }
-        #app .destinations .select-palnet .planet-img:not(.question).planet-Pingasor {
-          background: url(../images/planets.jpg) -820px -190px; }
-      #app .destinations .select-palnet .find {
-        display: block;
-        width: 100%;
-        position: relative;
-        background-color: #ffffff;
-        box-sizing: border-box;
-        padding: 5px;
-        border-radius: 5px; }
-        #app .destinations .select-palnet .find .planet-search {
-          width: 90%;
-          background: none transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          outline: 0; }
-        #app .destinations .select-palnet .find .dropdown.icon {
-          cursor: pointer;
-          position: absolute;
-          width: auto;
-          height: auto;
-          right: 5px;
-          font-family: icon; }
-          #app .destinations .select-palnet .find .dropdown.icon:after {
-            content: '\f0d7'; }
-      #app .destinations .select-palnet .planet-list {
-        display: none;
-        margin-top: 5px;
-        background-color: #ffffff;
-        box-sizing: border-box;
-        padding: 10px;
-        text-align: center; }
-        #app .destinations .select-palnet .planet-list li:hover {
-          background-color: rgba(0, 0, 0, 0.05); }
-      #app .destinations .select-palnet .space-vehicles-list li {
-        color: aquamarine; }
-        #app .destinations .select-palnet .space-vehicles-list li.enable {
-          color: black;
-          font-weight: bold; }
+      text-align: center; }
+      #app .destinations .select-palnet .planet-list li:hover {
+        background-color: rgba(0, 0, 0, 0.05); }
+    #app .destinations .select-palnet .space-vehicles-list li {
+      color: aquamarine; }
+      #app .destinations .select-palnet .space-vehicles-list li.enable {
+        color: black;
+        font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */
