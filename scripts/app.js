@@ -63,15 +63,21 @@ define([
 
 	App.prototype.initRoutes = function() {
 		this.router.on("route:play", function() {
+			$("#loading-wrapper").removeClass('hide');
 			this.reset();
+			$("#loading-wrapper").addClass('hide');
 		}.bind(this));
 		this.router.on("route:home", function() {
+			$("#loading-wrapper").removeClass('hide');
 			this.destroy();
 			this.setupHomeView();
+			$("#loading-wrapper").addClass('hide');
 		}.bind(this));
 		this.router.on("route:result", function() {
+			$("#loading-wrapper").removeClass('hide');
 			this.destroy();
 			this.setupResultView();
+			$("#loading-wrapper").addClass('hide');
 		}.bind(this));
 	}
 
