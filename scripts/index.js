@@ -1,5 +1,8 @@
 'use strict';
 
-define(['requireConfig', 'app'], function(requireConfig, app){
-	app.init();	
+define(['requireConfig'], function(requireConfig){
+
+	require(['app'], function(app) {
+		app.init();	
+	});
 });
