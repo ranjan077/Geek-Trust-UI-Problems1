@@ -10,10 +10,18 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       css: {
         files: 'styles/scss/*.scss',
         tasks: ['sass']
+      }
+    },
+    
+    connect: {
+      geek: {
+        port: 9000,
+        base: './'
       }
     }
   });
@@ -21,8 +29,11 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-
+  grunt.loadNpmTasks('grunt-connect');
   // Default task(s).
   grunt.registerTask('default', ['watch']);
+
+  // Start local server
+  grunt.registerTask('server', ['connect:geek']);
 
 };

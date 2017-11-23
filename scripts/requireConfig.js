@@ -20,11 +20,11 @@ require.config({
 		'SpaceVehicleCollection' : 'components/spaceVehicle/SpaceVehicleCollection',
 
 		/* TEMPLATES */
-		'SpacePlayTemplate': 'templates/SpacePlayTemplate',
-		'SpaceHomeTemplate': 'templates/SpaceHomeTemplate',
-		'SpaceResultTemplate': 'templates/SpaceResultTemplate',
-		'SelectPlanetTemplate': 'components/selectPlanet/SelectPlanetTemplate',
-		'SpaceVehiclesTemplate': 'components/spaceVehicle/SpaceVehiclesTemplate',
+		'SpacePlayTemplate': 'templates/SpacePlayTemplate.html',
+		'SpaceHomeTemplate': 'templates/SpaceHomeTemplate.html',
+		'SpaceResultTemplate': 'templates/SpaceResultTemplate.html',
+		'SelectPlanetTemplate': 'components/selectPlanet/SelectPlanetTemplate.html',
+		'SpaceVehiclesTemplate': 'components/spaceVehicle/SpaceVehiclesTemplate.html',
 
 		/* HELPER FILES */
 		'httpHelper': 'lib/httpHelper',
